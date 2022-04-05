@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Atores from "./Atores"
+import './index.css'
 
 class ListaDeAtores extends Component {
     constructor(props) {
@@ -12,6 +13,16 @@ class ListaDeAtores extends Component {
 
         this.adicionarAtor = this.adicionarAtor.bind(this)
         this.alterarAtor = this.alterarAtor.bind(this);
+        this.deletarAtor = this.deletarAtor.bind(this)
+    }
+
+    deletarAtor(key) {
+        var itensFiltrados = this.state.atores.filter(function(ator) {
+            return ator.key !== key
+        });
+        this.setState({
+            atores: itensFiltrados
+        })
     }
 
     adicionarAtor(e) {
@@ -38,14 +49,14 @@ class ListaDeAtores extends Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="listaAct">
+                <div className="header">
                     <form onSubmit={this.adicionarAtor}>
                         <input placeholder="Nome" value={this.state.ator} onChange={this.alterarAtor}/>
                         <button type="submit">Adicionar</button>
                     </form>
                 </div>
-                <Atores atores={this.state.atores} />
+                <Atores atores={this.state.atores} deletar={this.deletarAtor}/>
             </div>
         )
     }

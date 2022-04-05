@@ -5,10 +5,16 @@ class Atores extends Component {
         super(props);
 
         this.criarAtores = this.criarAtores.bind(this);
+        this.deletar = this.deletar.bind(this);
+    }
+
+    deletar(key) {
+        this.props.deletar(key)
     }
 
     criarAtores(ator) {
-        return <li key={ator.key}>{ator.text}</li>
+        return <li onClick={() => this.deletar(ator.key)} key={ator.key}>{ator.text}</li>;
+        // return <li key={ator.key}>{ator.text}</li>
     }
 
     render() {

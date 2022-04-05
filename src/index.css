@@ -6,7 +6,39 @@ body {
   margin: 0;  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.listaAct .header input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  width: 165px;
+}
+
+.listaAct .header button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  margin-right: 0px;
+  background-color: #f000bc;
+  color: #fff;
+  border: 2px solid #f000bc;
+}
+
+.listaAct .header button:hover {
+  background-color: #f000bc;
+  border: 2px solid #f000bc;
+  cursor: pointer;
+}
+
+.listaAct .lista {
+  list-style: none;
+  padding-left: 0;
+  width: 250px;
+}
+
+.listaAct .lista li {
+  color: #333;
+  background-color: #f5c8eb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
